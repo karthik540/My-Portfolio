@@ -12,9 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body id="app">
   
   <div class="container-fluid">
     <div class="row">
@@ -22,10 +23,11 @@
         <div class="container">
 
           <nav class="row mb-5 mt-4">
-            <div class="col-sm-4 text-light text-medium">
+            <div class="col-sm-2 text-light text-medium">
               Portfolio
             </div>
-            <div class="col-sm-8">
+
+            <div class="col-sm-10">
               
                 <div class="row">
                   <!--    First set of nav links    -->
@@ -49,7 +51,7 @@
                   <div class="col-sm-4">
                     <ul class="nav justify-content-end">
                       <li class="nav-item" style="float:right;">
-                        <a class="nav-link text-light" href="#">Karthik<i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
+                        <a class="nav-link text-light" href="#"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
                       </li>
                     </ul>
                   </div>
@@ -57,30 +59,87 @@
               
             </div>
           </nav>
+          
+          <!--    Top content text    -->
+          <div class="top-content-text">
+            <div class="row">
+              <h1 class="text-light text-large">Welcome to my Portfolio</h1>
+            </div>
+            <div class="row">
+              <h1 class="text-light text-large mb-4">Have a Blast :D</h1>
+            </div>
+            <div class="row">   <!--  Replace this with typewriter component    -->
+              <h1 id="typewriter-content" class="text-light text-medium"></h1>
+            </div>
 
-          <div class="row">
-            <h1 class="text-light text-large">Welcome to my Portfolio</h1>
-          </div>
-          <div class="row">
-            <h1 class="text-light text-large mb-4">Have a Blast :D</h1>
-          </div>
-          <div class="row">
-            <h1 class="text-light text-medium">Fully designed, developed and maintained by myself</h1>
-          </div>
-
-          <div class="row mt-4">
-            <button type="button" class="btn btn-primary pl-5 pr-5 pt-3 pb-3">Explore</button>
+            <div class="row mt-4">
+              <button type="button" class="btn btn-primary pl-5 pr-5 pt-3 pb-3">Explore</button>
+            </div>
           </div>
           
         </div>
       </div>
     </div>
-    <div class="">
-      <div>
-
+    <div class="row second-section">
+      <div id="photo" class="col-sm-6">
+        asdasd
       </div>
     </div>
   </div>
+
+
+
+
+
+  <!--       Scripting Starts         -->
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        window: {
+          width: 0,
+          height: 0
+        }
+      },
+      created() {
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize();
+      },
+      destroyed() {
+        window.removeEventListener('resize', this.handleResize)
+      },
+      computed: {
+        isResponsive: function() {
+          if(this.window.width < 767)
+            return true
+          else
+            return false
+        }
+      },
+      methods: {
+        handleResize() {
+          this.window.width = window.innerWidth;
+          this.window.height = window.innerHeight;
+        }
+      },
+    })
+
+    /*      typewriter instance      */
+    var options = {
+      strings: ["Fully designed, developed and maintained by myself", "I love doing these kinda stuff !"],
+      typeSpeed: 50,
+      backDelay: 3000,
+      loop: true
+    }
+    
+    var typewriterObj = new Typed("#typewriter-content", options);
+  </script>
+
+
+
+
+  <!--      StyleSheet Starts       -->
 
     
 </body>

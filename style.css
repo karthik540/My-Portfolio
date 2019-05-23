@@ -7,6 +7,16 @@
     background-position: center;
 }
 
+.second-section{
+    background-image: url("./Assets/2.svg");
+    position: relative;
+    min-height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*      Font style      */
 .text-light{
     color: #ffffff;
 }
@@ -27,9 +37,16 @@
     font-size: 20px;
 }
 
+
+/*      Button style        */
 .btn-outline-primary{
     background: #ffffff;
 }
 .btn-outline-primary:hover{
     background: #007AFF;
+}
+
+
+.top-content-text{
+    margin-top: 10%;
 }
