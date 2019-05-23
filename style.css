@@ -1,0 +1,35 @@
+.first-section{
+    background-image: url("./Assets/15.svg");
+    position: relative;
+    min-height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.text-light{
+    color: #ffffff;
+}
+
+.text-large{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+}
+
+.text-medium{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
+.text-small{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.btn-outline-primary{
+    background: #ffffff;
+}
+.btn-outline-primary:hover{
+    background: #007AFF;
+}
