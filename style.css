@@ -8,17 +8,25 @@
 }
 
 .second-section{
-    background-image: url("./Assets/2.svg");
+    background-image: url("./Assets/3.svg");
     position: relative;
     min-height: 800px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
 }
 
+.image-wrap{
+    max-height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 /*      Font style      */
 .text-light{
     color: #ffffff;
+}
+.text-blue{
+    color: #007BFF;
 }
 
 .text-large{
@@ -43,10 +51,16 @@
     background: #ffffff;
 }
 .btn-outline-primary:hover{
-    background: #007AFF;
+    background: #37A2F1;
 }
 
 
 .top-content-text{
     margin-top: 10%;
+}
+.vert-align {
+    margin-top:20%;
+}
+.vert-align > div{
+    margin-left: 30%;
 }
