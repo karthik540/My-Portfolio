@@ -85,10 +85,11 @@
     </div>
 
     <div class="row second-section" id="1">
+      
       <transition name = "fade" leave-active-class = "animated fadeOutLeft" enter-active-class = "animated fadeInLeft">
       <div class="col-sm-5 mr-5 image-wrap" v-if="firstSection" style="background-image: url('./Assets/img1.jpg')"></div>
       </transition>
-
+      
       <div class="col-sm-6 vert-align">
         <div class="row">
           <h1 class="text-blue text-large mb-3">A Musician</h1>
@@ -98,6 +99,22 @@
         </div>
       </div>
     </div>
+
+
+    <div class="row second-section" id="1">
+      <div class="col-sm-6 vert-align">
+        <div class="row">
+          <h1 class="text-blue text-large mb-3">A Musician</h1>
+        </div>
+        <div class="row">
+          <h1 class="text-medium">Guitarist, keyboardist and some drums maybe !</h1>
+        </div>
+      </div>      
+      <transition name = "fade" leave-active-class = "animated fadeOutRight" enter-active-class = "animated fadeInRight">
+        <div class="col-sm-5 mr-5 image-wrap" v-if="secondSection" style="background-image: url('./Assets/dev_sm.jpg')"></div>
+      </transition>
+    </div>
+
   </div>
 
 
@@ -114,22 +131,25 @@
           width: 0,
           height: 0
         },
-        firstSection: true,
-
-      },
-      watch: {
-        firstSection: function(val) {
-          console.log(val);
-        }
+        appearValue: 300,
+        firstLocationTop: null,
+        firstLocationBot:null,
+        secondSection: true,
       },
       created() {
         window.addEventListener('resize', this.handleResize)
-        this.handleResize();/*
+        window.addEventListener('scroll', this.handleResize)
+        this.handleResize();
+        
         var cardObj = document.getElementById("1")
-        var loc = cardObj.getBoundingClientRect()*/
+        var loc = cardObj.getBoundingClientRect()
+        this.firstLocationTop = loc.top
+        this.firstLocationBot = loc.bottom
+        
       },
       destroyed() {
         window.removeEventListener('resize', this.handleResize)
+        window.removeEventListener('scroll', this.handleResize)
       },
       computed: {
         isResponsive: function() {
@@ -137,16 +157,27 @@
             return true
           else
             return false
+        },
+        firstSection: function() {
+          if(this.window.height > (this.firstLocationTop - this.appearValue) && this.window.height < (this.firstLocationBot))
+            return true
+          else
+            return false            
         }
+      },      
+      watch: {
+        firstSection: function(val) {
+          console.log(val);
+        },
       },
       methods: {
         handleResize() {
           this.window.width = window.innerWidth;
-          this.window.height = window.innerHeight;
+          this.window.height = $(window).scrollTop()
         },
         clicked: function(){          
           this.firstSection = !this.firstSection         
-        }
+        },
       },
     })
 
@@ -159,6 +190,7 @@
     }
     
     var typewriterObj = new Typed("#typewriter-content", options);
+
   </script>
 
 
