@@ -52,10 +52,33 @@
                   </div>
                   <!--    Profile set of nav links    -->
                   <div class="col-sm-4">
-                    <ul class="nav justify-content-end">
-                      <li class="nav-item">
-                        <a class="nav-link text-light" href="#"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
-                      </li>
+                    <ul class="nav justify-content-end dropdown">
+                      <!--<li class="nav-item">
+                        <a class="nav-link text-light dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
+                      </li>-->
+                      <button type="button" class="btn" data-toggle="dropdown">
+                        <i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-header text-center">Profile</div>
+                        <div class="dropdown-divider"></div>
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="dropdown-header">Name</td>
+                              <td>: Karthik</td>
+                            </tr>
+                            <tr>
+                              <td class="dropdown-header">Age</td>
+                              <td>: 19</td>
+                            </tr>
+                            <tr>
+                              <td class="dropdown-header">Contact</td>
+                              <td>: rajkarthik96@gmail.com</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </ul>
                   </div>
                 </div>
@@ -64,7 +87,8 @@
           </nav>
           
           <!--    Top content text    -->
-          <div class="top-content-text">
+          <div class="row">
+          <div class="top-content-text col-sm-9">
             <div class="row">
               <h1 class="text-light text-large">Welcome to my Portfolio</h1>
             </div>
@@ -79,13 +103,17 @@
               <button type="button" v-on:click="clicked" class="btn btn-primary pl-5 pr-5 pt-3 pb-3">Explore</button>
             </div>
           </div>
+
+          <div class="col-sm-3 pt-5">
+              <img src="./Assets/img5.jpg" class="rounded-circle" alt="Cinque Terre" style="height: 200px;" title="P.C: Ankit Kumar Nath">
+          </div>
+          </div>
           
         </div>
       </div>
     </div>
 
-    <div class="row second-section pb-0" id="1">
-      
+    <div class="row second-section pb-0" id="1">      
       <transition name = "fade" leave-active-class = "animated fadeOutLeft" enter-active-class = "animated fadeInLeft">
       <div class="col-sm-5 mr-5 image-wrap" v-if="firstSection" style="background-image: url('./Assets/img1.jpg')"></div>
       </transition>
@@ -101,7 +129,7 @@
     </div>
 
 
-    <div class="row second-section" id="1">
+    <div class="row second-section" id="2">
       <div class="col-sm-6 vert-align image-content-left p-5">
         <div class="row">
           <h1 class="text-blue text-large mb-3">A VITian</h1>
@@ -110,7 +138,7 @@
           <h1 class="text-medium">A 19 year old undergraduate, 3<sup>rd</sup> year VIT University Chennai.</h1>
         </div>
       </div>      
-      <transition name = "fade" leave-active-class = "animated fadeOutRight" enter-active-class = "animated fadeInRight">
+      <transition name = "fade" leave-active-class = "animated fadeOut" enter-active-class = "animated fadeIn">
         <div class="col-sm-6 image-wrap" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
       </transition>
     </div>
@@ -131,10 +159,12 @@
           width: 0,
           height: 0
         },
-        appearValue: 100,
+        appearValue: 200,
+        locArray: [],
         firstLocationTop: null,
         firstLocationBot:null,
-        secondSection: true,
+        secondLocationTop:null,
+        secondLocationBot:null,
       },
       created() {
         window.addEventListener('resize', this.handleResize)
@@ -146,6 +176,21 @@
         this.firstLocationTop = loc.top
         this.firstLocationBot = loc.bottom
         
+        var cardObj = document.getElementById("2")
+        var loc = cardObj.getBoundingClientRect()
+        this.secondLocationTop = loc.top
+        this.secondLocationBot = loc.bottom
+        /*
+        for(var i=0;i<3;i++){
+          var cardObj = document.getElementById(i.toString())
+          var loc = cardObj.getBoundingClientRect()
+          var locJson = {
+            top: loc.top,
+            bottom: loc.top
+          }
+          this.locArray.push(locJson)
+        }
+        */
       },
       destroyed() {
         window.removeEventListener('resize', this.handleResize)
@@ -160,6 +205,10 @@
         },
         firstSection: function() {
           if(this.window.height > (this.firstLocationTop - this.appearValue) && this.window.height < (this.firstLocationBot))
+            return true            
+        },
+        secondSection: function() {
+          if(this.window.height > (this.secondLocationTop - this.appearValue) && this.window.height < (this.secondLocationBot +  this.appearValue))
             return true
           else
             return false            
