@@ -84,13 +84,13 @@
       </div>
     </div>
 
-    <div class="row second-section" id="1">
+    <div class="row second-section pb-0" id="1">
       
       <transition name = "fade" leave-active-class = "animated fadeOutLeft" enter-active-class = "animated fadeInLeft">
       <div class="col-sm-5 mr-5 image-wrap" v-if="firstSection" style="background-image: url('./Assets/img1.jpg')"></div>
       </transition>
       
-      <div class="col-sm-6 vert-align">
+      <div class="col-sm-6 vert-align image-content-right">
         <div class="row">
           <h1 class="text-blue text-large mb-3">A Musician</h1>
         </div>
@@ -102,16 +102,16 @@
 
 
     <div class="row second-section" id="1">
-      <div class="col-sm-6 vert-align">
+      <div class="col-sm-6 vert-align image-content-left p-5">
         <div class="row">
-          <h1 class="text-blue text-large mb-3">A Musician</h1>
+          <h1 class="text-blue text-large mb-3">A VITian</h1>
         </div>
-        <div class="row">
-          <h1 class="text-medium">Guitarist, keyboardist and some drums maybe !</h1>
+        <div class="row pr-5">
+          <h1 class="text-medium">A 19 year old undergraduate, 3<sup>rd</sup> year VIT University Chennai.</h1>
         </div>
       </div>      
       <transition name = "fade" leave-active-class = "animated fadeOutRight" enter-active-class = "animated fadeInRight">
-        <div class="col-sm-5 mr-5 image-wrap" v-if="secondSection" style="background-image: url('./Assets/dev_sm.jpg')"></div>
+        <div class="col-sm-6 image-wrap" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
       </transition>
     </div>
 
@@ -131,7 +131,7 @@
           width: 0,
           height: 0
         },
-        appearValue: 300,
+        appearValue: 100,
         firstLocationTop: null,
         firstLocationBot:null,
         secondSection: true,

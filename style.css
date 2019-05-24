@@ -16,7 +16,7 @@
 }
 
 .image-wrap{
-    max-height: 700px;
+    max-height: 800px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -61,6 +61,10 @@
 .vert-align {
     margin-top:20%;
 }
-.vert-align > div{
+.image-content-right > div{
     margin-left: 30%;
+}
+
+.image-content-left > div{
+    margin-left: 10%;
 }
