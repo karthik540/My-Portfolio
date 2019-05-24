@@ -36,6 +36,9 @@
     .image-content-left > div{
         margin: 0;
     }
+    .rounded-circle{
+        display: none;
+    }
 }
 /*      Font style      */
 .text-light{

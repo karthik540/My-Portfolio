@@ -100,7 +100,7 @@
             </div>
 
             <div class="row mt-4">
-              <button type="button" v-on:click="clicked" class="btn btn-primary pl-5 pr-5 pt-3 pb-3">Explore</button>
+              <button type="button" class="btn btn-primary pl-5 pr-5 pt-3 pb-3">Explore</button>
             </div>
           </div>
 
@@ -223,9 +223,6 @@
         handleResize() {
           this.window.width = window.innerWidth;
           this.window.height = $(window).scrollTop()
-        },
-        clicked: function(){          
-          this.firstSection = !this.firstSection         
         },
       },
     })
