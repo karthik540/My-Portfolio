@@ -50,6 +50,9 @@
 .text-black{
     color: black;
 }
+.text-grey{
+    color: #697A89;
+}
 
 .text-large{
     font-family: 'Open Sans', sans-serif;
@@ -66,9 +69,19 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
 }
+
 .text-vsmall{
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
+}
+
+.text-vvsmall{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+.text-bold{
+    font-weight: bolder;
 }
 
 
@@ -98,4 +111,10 @@
 /*      Table style     */
 .borderless td, .borderless th {
     border: none;
+}
+
+/*      footer style        */
+
+footer{
+    background-color: #022144;
 }
