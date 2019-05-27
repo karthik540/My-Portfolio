@@ -114,8 +114,8 @@
     </div>
 
     <div class="row second-section pb-0" id="1">      
-      <transition name = "fade" leave-active-class = "animated fadeOutLeft" enter-active-class = "animated fadeInLeft">
-      <div class="col-sm-5 mr-5 image-wrap" v-if="firstSection" style="background-image: url('./Assets/img1.jpg')"></div>
+      <transition name="slide-animate" tag="p">
+      <div class="col-sm-5 mr-5 animated-card image-wrap" v-if="firstSection" style="background-image: url('./Assets/img1.jpg')"></div>
       </transition>
       
       <div class="col-sm-6 vert-align image-content-right">
@@ -138,14 +138,14 @@
           <h1 class="text-medium">A 19 year old undergraduate, 3<sup>rd</sup> year VIT University Chennai.</h1>
         </div>
       </div>      
-      <transition name = "fade" leave-active-class = "animated fadeOut" enter-active-class = "animated fadeIn">
-        <div class="col-sm-6 image-wrap" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
+      <transition name = "fade-animate" tag="p">
+        <div class="col-sm-6 image-wrap animated-card" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
       </transition>
     </div>
 
     <div class="row second-section pb-0" id="3">      
-      <transition name = "fade" leave-active-class = "animated fadeOutLeft" enter-active-class = "animated fadeInLeft">
-      <div class="col-sm-5 mr-5 image-wrap" v-if="thirdSection" style="background-image: url('./Assets/img6.jpg')"></div>
+      <transition name = "slide-animate">
+      <div class="col-sm-5 mr-5 image-wrap animated-card" v-if="thirdSection" style="background-image: url('./Assets/img6.jpg')"></div>
       </transition>
       
       <div class="col-sm-6 vert-align image-content-right">

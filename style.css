@@ -1,3 +1,6 @@
+body{
+    transition: all 2s;
+}
 .first-section{
     background-image: url("./Assets/15.svg");
     position: relative;
@@ -21,7 +24,27 @@
     background-size: cover;
     background-position: center;
 }
+/*      Transition Animation CSS        */
+.animated-card {
+transition: all 1s;
+}
+/*  Slide Animation   */
+.slide-animate-enter, .slide-animate-leave-to{
+opacity: 0;
+transform: translateY(40px);
+}
+.slide-animate-leave-active {
+position: absolute;
+}
+/*  Fade Animation   */
+.fade-animate-enter, .fade-animate-leave-to{
+opacity: 0;
+}
+.fade-animate-leave-active {
+position: absolute;
+}
 
+/*          Responsive CSS          */
 @media only screen and (max-width: 767px) {
     .image-wrap{
         min-height: 200px;
