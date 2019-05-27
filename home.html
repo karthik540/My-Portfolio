@@ -143,6 +143,21 @@
       </transition>
     </div>
 
+    <div class="row second-section pb-0" id="3">      
+      <transition name = "fade" leave-active-class = "animated fadeOutLeft" enter-active-class = "animated fadeInLeft">
+      <div class="col-sm-5 mr-5 image-wrap" v-if="thirdSection" style="background-image: url('./Assets/img6.jpg')"></div>
+      </transition>
+      
+      <div class="col-sm-6 vert-align image-content-right">
+        <div class="row">
+          <h1 class="text-blue text-large mb-3">A Computer Enthusiast</h1>
+        </div>
+        <div class="row">
+          <h1 class="text-medium">Web developer,designer and lot more skills.</h1>
+        </div>
+      </div>
+    </div>
+
 
 
     <footer class="row">
@@ -263,6 +278,8 @@
         firstLocationBot:null,
         secondLocationTop:null,
         secondLocationBot:null,
+        thirdLocationTop:null,
+        thirdLocationBot:null,
       },
       created() {
         window.addEventListener('resize', this.handleResize)
@@ -278,6 +295,11 @@
         var loc = cardObj.getBoundingClientRect()
         this.secondLocationTop = loc.top
         this.secondLocationBot = loc.bottom
+
+        var cardObj = document.getElementById("3")
+        var loc = cardObj.getBoundingClientRect()
+        this.thirdLocationTop = loc.top
+        this.thirdLocationBot = loc.bottom
         /*
         for(var i=0;i<3;i++){
           var cardObj = document.getElementById(i.toString())
@@ -307,6 +329,12 @@
         },
         secondSection: function() {
           if(this.window.height > (this.secondLocationTop - this.appearValue) && this.window.height < (this.secondLocationBot +  this.appearValue))
+            return true
+          else
+            return false            
+        },
+        thirdSection: function() {
+          if(this.window.height > (this.thirdLocationTop - this.appearValue) && this.window.height < (this.thirdLocationBot))
             return true
           else
             return false            
