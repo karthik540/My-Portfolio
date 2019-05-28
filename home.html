@@ -100,7 +100,7 @@
             </div>
 
             <div class="row mt-4">
-              <button type="button" class="btn btn-primary pl-5 pr-5 pt-3 pb-3">Explore</button>
+              <button type="button" class="btn btn-primary" v-bind:class="{'px-4 py-2' : isResponsive , 'px-5 py-3' : !isResponsive}">Explore</button>
             </div>
           </div>
 
