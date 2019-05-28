@@ -19,7 +19,7 @@ body{
 }
 
 .image-wrap{
-    max-height: 800px;
+    min-height: 800px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

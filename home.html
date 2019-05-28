@@ -26,64 +26,68 @@
         <div class="container">
 
           <nav class="row py-5">
-            <div class="col-xl-2 col-12 text-light text-medium text-bold">
-              Portfolio
+            <div class="col-xl-10 col-10 pl-0">
+              <div class="row">
+                <!--    Website Title   -->
+                <div class="col-xl-2 text-light text-medium text-bold">
+                  Portfolio
+                </div>
+                
+                <!--    First set of nav links    -->
+                <div class="col-xl-10">
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link pl-0 text-light text-vsmall" v-bind:class="{'pr-2 py-2 text-vvsmall' : isResponsive}" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-
-            
-                  <!--    First set of nav links    -->
-                  <div class="col-xl-6 col-10">
-                    <ul class="nav">
-                      <li class="nav-item">
-                        <a class="nav-link pl-0 text-light text-vsmall" v-bind:class="{'pr-2 py-2 text-vvsmall' : isResponsive}" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Posts</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Gallery</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About me</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!--    Profile set of nav links    -->
-                  <div class="col-xl-4 col-2">
-                    <ul class="nav justify-content-end dropdown">
-                      <!--<li class="nav-item">
-                        <a class="nav-link text-light dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
-                      </li>-->
-                      <button type="button" class="btn" data-toggle="dropdown">
-                        <i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-header text-center">Profile</div>
-                        <div class="dropdown-divider"></div>
-                        <table>
-                          <tbody>
-                            <tr>
-                              <td class="dropdown-header">Name</td>
-                              <td>: Karthik</td>
-                            </tr>
-                            <tr>
-                              <td class="dropdown-header">Age</td>
-                              <td>: 19</td>
-                            </tr>
-                            <tr>
-                              <td class="dropdown-header">Contact</td>
-                              <td>: rajkarthik96@gmail.com</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </ul>
-                  </div>
+            <!--    Profile set of nav links    -->
+            <div class="col-xl-2 col-2">
+              <ul class="nav justify-content-end dropdown">
+                <!--<li class="nav-item">
+                  <a class="nav-link text-light dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
+                </li>-->
+                <button type="button" class="btn" data-toggle="dropdown">
+                  <i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <div class="dropdown-header text-center">Profile</div>
+                  <div class="dropdown-divider"></div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="dropdown-header">Name</td>
+                        <td>: Karthik</td>
+                      </tr>
+                      <tr>
+                        <td class="dropdown-header">Age</td>
+                        <td>: 19</td>
+                      </tr>
+                      <tr>
+                        <td class="dropdown-header">Contact</td>
+                        <td>: rajkarthik96@gmail.com</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ul>
+            </div>
           </nav>
           
           <!--    Top content text    -->
-          <div class="row col-xl-12">
-          <div class="top-content-text col-xl-9">
+          <div class="row ">
+          <div class="top-content-text col-xl-10">
             <div class="row">
               <h1 class="text-light text-large">Welcome to my Portfolio</h1>
             </div>
