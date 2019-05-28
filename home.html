@@ -145,7 +145,7 @@
 
     <div class="row second-section pb-0" id="3">      
       <transition name = "slide-animate">
-      <div class="col-sm-5 mr-5 image-wrap animated-card" v-if="thirdSection" style="background-image: url('./Assets/img6.jpg')"></div>
+      <div class="col-sm-5 mr-5 image-wrap animated-card" v-if="thirdSection" style="background-image: url('./Assets/img6.jpg')" title="P.C: Siddarth Ramaswamy"></div>
       </transition>
       
       <div class="col-sm-6 vert-align image-content-right">
@@ -158,13 +158,15 @@
       </div>
     </div>
 
+    
 
+    <!--        Footer Starts       -->
 
     <footer class="row">
       <div class="container">
-        <div class="row">
+        <div class="row center">
           <!--      Section 1     -->
-          <div class="col-xl-3 p-3 my-4">
+          <div class="col-xl-3 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
             <div class="row text-small text-white text-bold">
               My Motto
             </div>
@@ -174,7 +176,7 @@
           </div>
 
           <!--      Section 2     -->
-          <div class="col-xl-2 p-3 my-4">
+          <div class="col-xl-2 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
             <div class="row text-vsmall text-white text-bold">
               Explore
             </div>
@@ -193,7 +195,7 @@
           </div>
 
           <!--    Section 3     -->
-          <div class="col-xl-3 p-3 my-4">
+          <div class="col-xl-3 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
             <!--    Sub-Section 1    -->
             <div class="row text-vsmall text-white text-bold">
               Visit
@@ -220,7 +222,7 @@
           </div>
 
           <!--    Section 4     -->
-          <div class="col-xl-2 p-3 my-4">
+          <div class="col-xl-2 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
             <div class="row text-vsmall text-white text-bold">
               Follow
             </div>
@@ -239,7 +241,7 @@
           </div>
 
           <!--    Section 5     -->
-          <div class="col-xl-2 p-3 my-4 text-center">
+          <div class="col-xl-2 col-12 p-3 my-4 text-center">
             <button class="btn btn-outline-primary" style="background-color: #022144;">Back to top</button>
           </div>
 
@@ -247,14 +249,14 @@
 
         <div class="row">
           <!--      Copyright section     -->
-          <div class="col-xl-3 p-3 my-4">
-            <div class="row text-vvsmall text-grey mt-3 pr-5 text-center">
+            <div class="text-vvsmall text-grey my-4" v-bind:class="{'text-center col-12' : isResponsive}">
                 &copy; Karthik, All Rights Reserved.
             </div>
-          </div>
         </div>
       </div>
     </footer>
+
+    <!--      Footer Ends       -->
 
   </div>
 
