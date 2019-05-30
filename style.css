@@ -18,6 +18,19 @@ body{
     background-size: cover;
 }
 
+.section-light{
+    background-image: url("./Assets/3.svg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.section-blue{
+    background-image: url("./Assets/16.svg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
 .image-wrap{
     min-height: 800px;
     background-repeat: no-repeat;
@@ -155,4 +168,32 @@ position: absolute;
 
 footer{
     background-color: #022144;
+}
+
+
+/*      Skills Animtion     */
+.skill-parent{
+    overflow: hidden;
+}
+.skill-child{
+    position: relative;
+}
+.left-right{
+    animation: left-right 50s infinite;            
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+.right-left{
+    animation: right-left 50s infinite;            
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes left-right {
+    0%   {left: -100%}
+    100% {left: 100%}
+}
+@keyframes right-left {
+    0%   {left: 100%}
+    100% {left: -100%}
 }

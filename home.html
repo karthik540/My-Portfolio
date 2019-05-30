@@ -46,7 +46,7 @@
                       <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Gallery</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About</a>
+                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#fsection">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -86,7 +86,7 @@
           </nav>
           
           <!--    Top content text    -->
-          <div class="row ">
+          <div class="row">
           <div class="top-content-text col-xl-10">
             <div class="row">
               <h1 class="text-light text-large">Welcome to my Portfolio</h1>
@@ -157,10 +157,26 @@
       </div>
     </div>
 
+    <div class="row section-light">
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills</div>
+        <img v-for="x in 10" :src="'Assets/Skills/'+ x +'.jpg'" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+      </div>
+
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Games</div>
+        <img v-for="x in 6" :src="'Assets/Games/'+ x +'.jpg'" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
+      </div>
+
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands</div>
+        <img v-for="x in 6" :src="'Assets/Music/'+ x +'.png'" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+      </div>
+    </div>
     
 
     <!--        Footer Starts       -->
-
+    <a name="fsection"></a>
     <footer class="row">
       <div class="container">
         <div class="row center">
@@ -241,7 +257,7 @@
 
           <!--    Section 5     -->
           <div class="col-xl-2 col-12 p-3 my-4 text-center">
-            <button class="btn btn-outline-primary" style="background-color: #022144;">Back to top</button>
+            <button class="btn btn-outline-primary" @click="topClick" style="background-color: #022144;">Back to top</button>
           </div>
 
         </div>
@@ -351,6 +367,9 @@
           this.window.width = window.innerWidth;
           this.window.height = $(window).scrollTop()
         },
+        topClick: function() {
+          $("html, body").animate({scrollTop: 0}, 1000);
+        }
       },
     })
 
