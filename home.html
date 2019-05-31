@@ -177,17 +177,17 @@
 
     <div class="row section-light">
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
-        <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills</div>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills<i class="fa fa-code ml-2 text-grey" style="font-size:30px"></i></div>
         <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
 
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
-        <div class="text-center col-12 text-black text-medium text-bold my-5">Games</div>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Games<i class="fa fa-gamepad ml-2 text-grey" style="font-size:30px"></i></div>
         <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
       </div>
 
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
-        <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands</div>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands  </div>
         <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
     </div>
@@ -387,24 +387,32 @@
             return false
         },
         firstSection: function() {
-          if(this.window.height > (this.firstLocationTop - this.appearValue) && this.window.height < (this.firstLocationBot))
-            return true            
+          if(this.window.height > (this.firstLocationTop - this.appearValue) && this.window.height < (this.firstLocationBot + this.appearValue))
+            return true
+          else if(this.window.height <= (this.firstLocationTop - this.appearValue) || this.window.height >= (this.firstLocationBot + this.appearValue))            
+            return false
         },
         secondSection: function() {
           if(this.window.height > (this.secondLocationTop - this.appearValue) && this.window.height < (this.secondLocationBot +  this.appearValue))
-            return true
-          else
-            return false            
+            return true 
+          else if(this.window.height <= (this.secondLocationTop - this.appearValue) || this.window.height >= (this.secondLocationBot +  this.appearValue))           
+            return false
         },
         thirdSection: function() {
           if(this.window.height > (this.thirdLocationTop - this.appearValue) && this.window.height < (this.thirdLocationBot))
-            return true
-          else
-            return false            
+            return true            
+          else if(this.window.height <= (this.thirdLocationTop - this.appearValue) || this.window.height >= (this.thirdLocationBot))
+            return false
         }
       },      
       watch: {
         firstSection: function(val) {
+          console.log(val);
+        },
+        secondSection: function(val) {
+          console.log(val);
+        },
+        thirdSection: function(val) {
           console.log(val);
         },
       },
