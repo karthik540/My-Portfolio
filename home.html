@@ -160,17 +160,17 @@
     <div class="row section-light">
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills</div>
-        <img v-for="x in 10" :src="'Assets/Skills/'+ x +'.jpg'" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+        <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
 
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <div class="text-center col-12 text-black text-medium text-bold my-5">Games</div>
-        <img v-for="x in 6" :src="'Assets/Games/'+ x +'.jpg'" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
+        <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
       </div>
 
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands</div>
-        <img v-for="x in 6" :src="'Assets/Music/'+ x +'.png'" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+        <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
     </div>
     
@@ -297,6 +297,34 @@
         secondLocationBot:null,
         thirdLocationTop:null,
         thirdLocationBot:null,
+        skillsData:[
+          {id: 1 , title:'Unreal Engine'},
+          {id: 2 , title:'HTML5 CSS3 JS'},
+          {id: 3 , title:'Unity'},
+          {id: 4 , title:'Ajax'},
+          {id: 5 , title:'JQuery'},
+          {id: 6 , title:'Flask'},
+          {id: 7 , title:'Django'},
+          {id: 8 , title:'Php'},
+          {id: 9 , title:'Node JS'},
+          {id: 10 , title:'React Native'}, 
+        ],
+        musicData:[
+          {id: 1 , title:'AC/DC'},
+          {id: 2 , title:'Taylor Swift'},
+          {id: 3 , title:'Hiphop Tamizhan'},
+          {id: 4 , title:'Mettalica'},
+          {id: 5 , title:'Slash'},
+          {id: 6 , title:'Avenged Sevenfold'},
+        ],
+        gamesData:[
+          {id: 1 , title:'Dark Souls III'},
+          {id: 2 , title:'Apex Legends'},
+          {id: 3 , title:'PUBG'},
+          {id: 4 , title:'Rainbow Six Siege'},
+          {id: 5 , title:'Fortnite'},
+          {id: 6 , title:'League of Legends'},
+        ],
       },
       created() {
         window.addEventListener('resize', this.handleResize)

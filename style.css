@@ -181,12 +181,12 @@ footer{
 .left-right{
     animation: left-right 50s infinite;            
     animation-timing-function: linear;
-    animation-direction: alternate;
+    animation-direction: normal;
 }
 .right-left{
     animation: right-left 50s infinite;            
     animation-timing-function: linear;
-    animation-direction: alternate;
+    animation-direction: normal;
 }
 
 @keyframes left-right {
