@@ -399,9 +399,9 @@
             return false
         },
         thirdSection: function() {
-          if(this.window.height > (this.thirdLocationTop - this.appearValue) && this.window.height < (this.thirdLocationBot))
+          if(this.window.height > (this.thirdLocationTop - this.appearValue) && this.window.height < (this.thirdLocationBot + this.appearValue))
             return true            
-          else if(this.window.height <= (this.thirdLocationTop - this.appearValue) || this.window.height >= (this.thirdLocationBot))
+          else if(this.window.height <= (this.thirdLocationTop - this.appearValue) || this.window.height >= (this.thirdLocationBot + this.appearValue))
             return false
         }
       },      
