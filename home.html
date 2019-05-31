@@ -128,8 +128,8 @@
     </div>
 
 
-    <div class="row second-section" id="2">
-      <span v-if="!isResponsive">
+    <div id="2">
+    <span class="row second-section" v-if="!isResponsive">
       <div class="col-sm-6 vert-align image-content-left p-5">
         <div class="row">
           <h1 class="text-blue text-large mb-3">A VITian</h1>
@@ -141,8 +141,10 @@
       <transition name = "fade-animate" tag="p">
         <div class="col-sm-6 image-wrap animated-card" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
       </transition>
-      </span>
-      <span v-if="isResponsive">
+    </span>
+      
+
+      <span class="row second-section" v-if="isResponsive">
         <transition name="slide-animate" tag="p">
         <div class="col-sm-5 mr-5 animated-card image-wrap" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
         </transition>
