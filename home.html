@@ -129,6 +129,7 @@
 
 
     <div class="row second-section" id="2">
+      <span v-if="!isResponsive">
       <div class="col-sm-6 vert-align image-content-left p-5">
         <div class="row">
           <h1 class="text-blue text-large mb-3">A VITian</h1>
@@ -140,6 +141,21 @@
       <transition name = "fade-animate" tag="p">
         <div class="col-sm-6 image-wrap animated-card" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
       </transition>
+      </span>
+      <span v-if="isResponsive">
+        <transition name="slide-animate" tag="p">
+        <div class="col-sm-5 mr-5 animated-card image-wrap" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
+        </transition>
+        
+        <div class="col-sm-6 vert-align image-content-right">
+          <div class="row">
+            <h1 class="text-blue text-large mb-3">A VITian</h1>
+          </div>
+          <div class="row">
+            <h1 class="text-medium">A 19 year old undergraduate, 3<sup>rd</sup> year VIT University Chennai.</h1>
+          </div>
+        </div>
+      </span>
     </div>
 
     <div class="row second-section pb-0" id="3">      
@@ -326,7 +342,7 @@
           {id: 6 , title:'League of Legends'},
         ],
       },
-      created() {
+      mounted() {
         window.addEventListener('resize', this.handleResize)
         window.addEventListener('scroll', this.handleResize)
         this.handleResize();
