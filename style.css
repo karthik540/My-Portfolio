@@ -72,12 +72,14 @@ position: absolute;
     .image-content-left > div{
         margin: 0;
     }
-    .rounded-circle{
-        display: none;
-    }
     .center{
         padding: auto;
     }
+}
+@media only screen and (max-width: 1000px) {
+.rounded-circle{
+    display: none;
+}
 }
 /*      Font style      */
 .text-light{
