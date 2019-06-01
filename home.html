@@ -25,7 +25,7 @@
       <div class="col-xl-12 first-section">
         <div class="container">
 
-          <nav class="row py-5">
+          <nav class="row pt-5">
             <div class="col-xl-10 col-10 pl-0">
               <div class="row">
                 <!--    Website Title   -->
@@ -43,7 +43,7 @@
                       <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Honors</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About me</a>
+                      <a class="nav-link text-light text-vsmall" v-on:click="aboutDropdown = !aboutDropdown" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About me</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#fsection">Contact</a>
@@ -84,6 +84,37 @@
               </ul>
             </div>
           </nav>
+          <div class="row">
+          <div class="dropdown col-12">
+            <transition name="slide-animate-short" tag="p">
+            <div v-if="aboutDropdown" class="nav-bar-dropdown animated-card-short dropdown-menu show">
+              <div class="row">
+              <a href="#skill-section" class="col-md mx-5 my-2">
+              <div class="card  dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/About/1.jpg')">
+                <div class="card-body">
+                  <h4 class="text-medium" v-bind:class="{'text-center' : !isResponsive}">Skills</h4>                  
+                </div>                
+              </div>
+              </a>
+              <a href="#games-section" class="col-md mx-5 my-2">
+              <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/About/2.jpg')">
+                <div class="card-body" >
+                  <h4 class="text-medium" v-bind:class="{'text-center' : !isResponsive}">Games</h4>
+                </div>                
+              </div>
+              </a>
+              <a href="#music-section" class="col-md mx-5 my-2">
+              <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/About/3.jpg')" >
+                <div class="card-body image-wrap-small">
+                  <h4 class="text-medium" v-bind:class="{'text-center' : !isResponsive}">Music</h4>
+                </div>                
+              </div>
+              </a>
+              </div>
+            </div>
+            </transition>
+          </div>
+          </div>
           
           <!--    Top content text    -->
           <div class="row">
@@ -176,16 +207,19 @@
     </div>
 
     <div class="row section-light">
+      <a name="skill-section"></a>
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills<i class="fa fa-code ml-2 text-grey" style="font-size:30px"></i></div>
         <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
 
+      <a name="games-section"></a>
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <div class="text-center col-12 text-black text-medium text-bold my-5">Games<i class="fa fa-gamepad ml-2 text-grey" style="font-size:30px"></i></div>
         <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
       </div>
 
+      <a name="music-section"></a>
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands  </div>
         <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
@@ -315,6 +349,7 @@
         secondLocationBot:null,
         thirdLocationTop:null,
         thirdLocationBot:null,
+        aboutDropdown: false,
         skillsData:[
           {id: 1 , title:'Unreal Engine'},
           {id: 2 , title:'HTML5 CSS3 JS'},
@@ -342,6 +377,11 @@
           {id: 4 , title:'Rainbow Six Siege'},
           {id: 5 , title:'Fortnite'},
           {id: 6 , title:'League of Legends'},
+        ],
+        aboutMe:[
+          {id: 1 , title:'Skills'},
+          {id: 2 , title:'Games'},
+          {id: 3 , title:'Music'},
         ],
       },
       mounted() {

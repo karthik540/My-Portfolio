@@ -41,12 +41,23 @@ body{
 .animated-card {
 transition: all 1s;
 }
+.animated-card-short{
+transition: all 0.5s;  
+}
 /*  Slide Animation   */
 .slide-animate-enter, .slide-animate-leave-to{
 opacity: 0;
 transform: translateY(40px);
 }
 .slide-animate-leave-active {
+position: absolute;
+}
+
+.slide-animate-short-enter, .slide-animate-short-leave-to{
+opacity: 0;
+transform: translateY(20px);
+}
+.slide-animate-short-leave-active {
 position: absolute;
 }
 /*  Fade Animation   */
@@ -125,7 +136,7 @@ position: absolute;
     font-weight: bolder;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1000px) {
     .text-large{
         font-family: 'Open Sans', sans-serif;
         font-size:35px;
@@ -198,4 +209,40 @@ footer{
 @keyframes right-left {
     0%   {left: 100%}
     100% {left: -100%}
+}
+
+/*      Navbar Dropdown     */
+.nav-bar-dropdown{
+    width: 100%;
+    margin-left: 0;
+}
+.dropdown-card{
+    background-color: #ffffff;
+    color: #37A2F1;
+}
+.dropdown-card:hover{
+    
+    box-shadow: 0 0 20px rgb(44, 173, 209);
+}
+
+.image-wrap-small{
+    min-height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media only screen and (max-width: 767px) {
+   
+    .image-wrap-small{
+        min-height: 130px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    } 
+}
+
+a, a:hover, a:focus, a:active, a:link , a:visited{
+    text-decoration: none;
+    color: none;
 }
