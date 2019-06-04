@@ -61,7 +61,13 @@
                 <button type="button" class="btn" @click="navbarHandler(3)">
                   <i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i>
                 </button>
-                <div v-if= "profileDropdown" class="dropdown-menu dropdown-menu-right show">
+              </ul>
+            </div>
+          </nav>
+          <div class="row">
+          <div class="dropdown col-12">
+            <transition name="slide-animate-short" tag="p">
+              <div v-if= "profileDropdown" class="dropdown-menu dropdown-menu-right animated-card-short show">
                   <div class="dropdown-header text-center">Profile</div>
                   <div class="dropdown-divider"></div>
                   <table>
@@ -81,11 +87,7 @@
                     </tbody>
                   </table>
                 </div>
-              </ul>
-            </div>
-          </nav>
-          <div class="row">
-          <div class="dropdown col-12">
+            </transition>
             <transition name="slide-animate-short" tag="p">
             <div v-if="aboutDropdown" class="nav-bar-dropdown animated-card-short dropdown-menu show">
               <div class="row">
@@ -119,14 +121,14 @@
               <a href="#skill-section" class="col-md mx-3 my-2">
               <div class="card  dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/Achievement/1.jpg')">
                 <div class="card-body">
-                  <h4 class="text-medium text-white" v-bind:class="{'text-center' : !isResponsive}">Achievements</h4>                  
+                  <h4 class="text-medium text-dblue" v-bind:class="{'text-center' : !isResponsive}">Achievements</h4>                  
                 </div>                
               </div>
               </a>
               <a href="#music-section" class="col-md mx-3 my-2">
               <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/Achievement/2.jpg')" >
                 <div class="card-body image-wrap-small">
-                  <h4 class="text-medium text-white" v-bind:class="{'text-center' : !isResponsive}">Projects</h4>
+                  <h4 class="text-medium text-dblue" v-bind:class="{'text-center' : !isResponsive}">Projects</h4>
                 </div>                
               </div>
               </a>
