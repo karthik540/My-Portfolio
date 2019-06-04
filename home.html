@@ -40,10 +40,10 @@
                       <a class="nav-link pl-0 text-light text-vsmall" v-bind:class="{'pr-2 py-2 text-vvsmall' : isResponsive}" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Honors</a>
+                      <a class="nav-link text-light text-vsmall" v-on:click="navbarHandler(1)" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Honors</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light text-vsmall" v-on:click="aboutDropdown = !aboutDropdown" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About me</a>
+                      <a class="nav-link text-light text-vsmall" v-on:click="navbarHandler(2)" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About me</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#fsection">Contact</a>
@@ -58,10 +58,10 @@
                 <!--<li class="nav-item">
                   <a class="nav-link text-light dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
                 </li>-->
-                <button type="button" class="btn" data-toggle="dropdown">
+                <button type="button" class="btn" @click="navbarHandler(3)">
                   <i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i>
                 </button>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div v-if= "profileDropdown" class="dropdown-menu dropdown-menu-right show">
                   <div class="dropdown-header text-center">Profile</div>
                   <div class="dropdown-divider"></div>
                   <table>
@@ -113,6 +113,27 @@
               </div>
             </div>
             </transition>
+            <transition name="slide-animate-short" tag="p">
+            <div v-if="honorDropdown" class="nav-bar-dropdown animated-card-short dropdown-menu show">
+              <div class="row">
+              <a href="#skill-section" class="col-md mx-3 my-2">
+              <div class="card  dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/Achievement/1.jpg')">
+                <div class="card-body">
+                  <h4 class="text-medium text-white" v-bind:class="{'text-center' : !isResponsive}">Achievements</h4>                  
+                </div>                
+              </div>
+              </a>
+              <a href="#music-section" class="col-md mx-3 my-2">
+              <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/Achievement/2.jpg')" >
+                <div class="card-body image-wrap-small">
+                  <h4 class="text-medium text-white" v-bind:class="{'text-center' : !isResponsive}">Projects</h4>
+                </div>                
+              </div>
+              </a>
+              </div>
+            </div>
+            </transition>
+
           </div>
           </div>
           
@@ -207,20 +228,20 @@
     </div>
 
     <div class="row section-light">
-      <a name="skill-section"></a>
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="skill-section"></a>
         <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills<i class="fa fa-code ml-2 text-grey" style="font-size:30px"></i></div>
         <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
 
-      <a name="games-section"></a>
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="games-section"></a>
         <div class="text-center col-12 text-black text-medium text-bold my-5">Games<i class="fa fa-gamepad ml-2 text-grey" style="font-size:30px"></i></div>
         <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
       </div>
 
-      <a name="music-section"></a>
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="music-section"></a>
         <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands  </div>
         <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
@@ -350,6 +371,8 @@
         thirdLocationTop:null,
         thirdLocationBot:null,
         aboutDropdown: false,
+        honorDropdown: false,
+        profileDropdown: false,
         skillsData:[
           {id: 1 , title:'Unreal Engine'},
           {id: 2 , title:'HTML5 CSS3 JS'},
@@ -460,6 +483,21 @@
         handleResize() {
           this.window.width = window.innerWidth;
           this.window.height = $(window).scrollTop()
+        },
+        navbarHandler(no) {
+          if(no == 1){
+            this.aboutDropdown = false
+            this.profileDropdown = false
+            this.honorDropdown = !this.honorDropdown
+          }else if(no == 2) {
+            this.honorDropdown = false
+            this.profileDropdown = false
+            this.aboutDropdown = !this.aboutDropdown
+          }else if(no == 3) {
+            this.honorDropdown = false
+            this.aboutDropdown = false
+            this.profileDropdown = !this.profileDropdown
+          }
         },
         topClick: function() {
           $("html, body").animate({scrollTop: 0}, 1000);
