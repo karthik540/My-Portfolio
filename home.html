@@ -261,7 +261,7 @@
           <h1 class="text-light text-large">Achievements</h1>
         </div>
         <div class="row col-12">   <!--  Replace this with typewriter component    -->
-          <h1 class="text-light text-medium">From my school days till now !</h1>
+          <h1 class="text-light text-medium">Prizes and Honors recieved in <br v-if="isResponsive"> <span id="achive" class="text-medium"></span></h1>
         </div>
         <div class="row">
         <div class="col-xl-4 col-12 pt-5" v-for="(ach,index) in acheivementData">
@@ -603,9 +603,16 @@
       backDelay: 3000,
       loop: true
     }
+    var options_achive = {
+      strings: ["Schools." , "Colleges." , "Outer-Competitions."],
+      typeSpeed: 50,
+      backDelay: 3000,
+      loop: true
+    }
     
     var typewriterObj = new Typed("#typewriter-content", options);
-
+    var typewriterObjAchieve = new Typed("#achive", options_achive);
+     
   </script>
 
 
