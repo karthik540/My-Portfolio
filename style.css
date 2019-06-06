@@ -25,10 +25,12 @@ body{
     background-size: cover; 
 }
 .section-blue{
-    background-image: url("./Assets/16.svg");
-    position: relative;
+    background-image: url("./Assets/2.svg");
+    position: relative;    
+    min-height: 800px;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;     
+    background-position: center;
 }
 
 .image-wrap{
@@ -253,4 +255,10 @@ footer{
 a, a:hover, a:focus, a:active, a:link , a:visited{
     text-decoration: none;
     color: none;
+}
+
+/* Make the image fully responsive */
+.carousel-inner img {
+    width: 350px;
+    height: 250px;
 }

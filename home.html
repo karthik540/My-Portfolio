@@ -229,6 +229,8 @@
       </div>
     </div>
 
+    <!--    About me      -->
+
     <div class="row section-light">
       <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
         <a name="skill-section"></a>
@@ -248,6 +250,52 @@
         <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
       </div>
     </div>
+    <!--    About me ends   -->
+
+
+    <!--    Achievements    -->
+
+    <div class="row section-blue">
+      <div class="container">
+        <div class="row col-12 pt-5 pb-3">
+          <h1 class="text-light text-large">Achievements</h1>
+        </div>
+        <div class="row col-12">   <!--  Replace this with typewriter component    -->
+          <h1 class="text-light text-medium">From my school days till now !</h1>
+        </div>
+        <div class="row">
+        <div class="col-xl-4 col-12 pt-5" v-for="(ach,index) in acheivementData">
+            <div :id='"myCarousel"+index' class="carousel slide" data-ride="carousel">
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item" v-for="(imag,index) in ach.images" :class="{'active' : index === 1}">
+                  <img :src="imag" alt="Los Angeles" width="1100" height="500">
+                </div>
+              </div>
+              
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" :href='"#myCarousel"+index' data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" :href='"#myCarousel"+index' data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+
+          <div class="row py-4">
+            <ul>
+              <li v-for="item in ach.list" class="text-vsmall">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
     
 
     <!--        Footer Starts       -->
@@ -408,6 +456,47 @@
           {id: 2 , title:'Games'},
           {id: 3 , title:'Music'},
         ],
+        acheivementData:[
+          {
+            title: 'Programming and Hackathon',
+            images: [
+              './Assets/Navbar/About/1.jpg',
+              './Assets/Navbar/About/2.jpg',
+              './Assets/Navbar/About/3.jpg',              
+            ],
+            list: [
+              "1st place - Texas'18 Hackathon",
+              "2nd place - Mozilla Hello Web Hackathon",
+              "2nd place - Game Jam Titans"
+            ]
+          },
+          {
+            title: 'Swimming',
+            images: [
+              './Assets/Navbar/About/1.jpg',
+              './Assets/Navbar/About/2.jpg',
+              './Assets/Navbar/About/3.jpg',              
+            ],
+            list: [
+              "3rd place - Individual Medley Breaststroke",
+              "3rd place - Relay",
+              "3rd place - Relay"
+            ]
+          },
+          {
+            title: 'Battle of Bands',
+            images: [
+              './Assets/Navbar/About/1.jpg',
+              './Assets/Navbar/About/2.jpg',
+              './Assets/Navbar/About/3.jpg',              
+            ],
+            list: [
+              "1st place - WCC-Festeve (2019)",
+              "1st place - Vibrance (2019)"
+            ]
+          },
+
+        ]
       },
       mounted() {
         window.addEventListener('resize', this.handleResize)
