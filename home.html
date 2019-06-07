@@ -264,7 +264,7 @@
           <h1 class="text-light text-medium">Prizes and Honors recieved in <br v-if="isResponsive"> <span id="achive" class="text-medium"></span></h1>
         </div>
         <div class="row">
-        <div class="col-xl-4 col-12 pt-5" v-for="(ach,index) in acheivementData">
+        <div class="col-lg-4 col-12 pt-5" v-for="(ach,index) in acheivementData">
             <div :id='"myCarousel"+index' class="carousel slide" data-ride="carousel">
               <!-- The slideshow -->
               <div class="carousel-inner">
@@ -282,8 +282,8 @@
               </a>
             </div>
 
-          <div class="row py-4">
-            <ul>
+          <div class="row pt-5">
+            <ul class="achi-list">
               <li v-for="item in ach.list" class="text-small">{{ item }}</li>
             </ul>
           </div>
