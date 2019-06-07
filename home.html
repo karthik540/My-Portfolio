@@ -229,30 +229,6 @@
       </div>
     </div>
 
-    <!--    About me      -->
-
-    <div class="row section-light">
-      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
-        <a name="skill-section"></a>
-        <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills<i class="fa fa-code ml-2 text-grey" style="font-size:30px"></i></div>
-        <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
-      </div>
-
-      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
-        <a name="games-section"></a>
-        <div class="text-center col-12 text-black text-medium text-bold my-5">Games<i class="fa fa-gamepad ml-2 text-grey" style="font-size:30px"></i></div>
-        <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
-      </div>
-
-      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
-        <a name="music-section"></a>
-        <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands  </div>
-        <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
-      </div>
-    </div>
-    <!--    About me ends   -->
-
-
     <!--    Achievements    -->
 
     <div class="row section-blue">
@@ -288,6 +264,89 @@
             </ul>
           </div>
         </div>
+        </div>
+      </div>
+    </div>
+
+    <!--    About me      -->
+
+    <div class="row section-light">
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="skill-section"></a>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills<i class="fa fa-code ml-2 text-grey" style="font-size:30px"></i></div>
+        <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+      </div>
+
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="games-section"></a>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Games<i class="fa fa-gamepad ml-2 text-grey" style="font-size:30px"></i></div>
+        <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
+      </div>
+
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="music-section"></a>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands  </div>
+        <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+      </div>
+    </div>
+    <!--    About me ends   -->
+
+
+    <!--    Project / Work Section    -->
+
+    <div class="row section-blue">
+      <div class="container">
+        <div class="row col-12 pt-5 pb-3">
+          <h1 class="text-light text-large">Projects / Work</h1>
+        </div>
+        <div class="row col-12">   <!--  Replace this with typewriter component    -->
+          <h1 class="text-light text-medium">Some of the projects and products that i've developed </h1>
+        </div>
+        <div class="row">
+          
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0">
+              <img class="card-img-top" src="./Assets/Projects/1.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">BeatSite</h4>
+                <p class="card-text text-vsmall">An AI powered(Bot DEKU) music listening website.Designed with CSS which is fully responsive and with Flask as the back end.</p>
+                <a href="#" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0">
+              <img class="card-img-top" src="./Assets/Projects/2.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">PAB-Vision</h4>
+                <p class="card-text text-vsmall">Personal Assistant for Blind also abbreviated as PAB is a AI bot to provide a Real Time Solution for the Blind !</p>
+                <a href="#" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0">
+              <img class="card-img-top" src="./Assets/Projects/3.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">My-Porfolio</h4>
+                <p class="card-text text-vsmall">Wanna know how i made this website ? Wanna know everything render in one single file ? Click the below link to find out.</p>
+                <a href="#" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12 px-3 py-5">
+            <div class="card p-0">
+              <img class="card-img-top" src="./Assets/Projects/4.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Pictionary</h4>
+                <p class="card-text text-vsmall">It is a Desktop Application created using C# and .NET. This application helps the user to personalize and maintain his/her's dictionary in there way, with the support of a unique account provided for each user.</p>
+                <a href="#" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
