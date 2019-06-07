@@ -268,7 +268,7 @@
             <div :id='"myCarousel"+index' class="carousel slide" data-ride="carousel">
               <!-- The slideshow -->
               <div class="carousel-inner">
-                <div class="carousel-item" v-for="(imag,index) in ach.images" :class="{'active' : index === 1}">
+                <div class="carousel-item" v-for="(imag,index) in ach.images" :class="{'active' : index === 0}">
                   <img :src="imag" alt="Los Angeles">
                 </div>
               </div>
@@ -284,7 +284,7 @@
 
           <div class="row py-4">
             <ul>
-              <li v-for="item in ach.list" class="text-vsmall">{{ item }}</li>
+              <li v-for="item in ach.list" class="text-small">{{ item }}</li>
             </ul>
           </div>
         </div>
@@ -460,9 +460,9 @@
           {
             title: 'Programming and Hackathon',
             images: [
-              './Assets/Navbar/About/1.jpg',
-              './Assets/Navbar/About/2.jpg',
-              './Assets/Navbar/About/3.jpg',              
+              './Assets/Achievement/Competition/1.jpg',
+              './Assets/Achievement/Competition/2.jpg',
+              './Assets/Achievement/Competition/3.jpg',         
             ],
             list: [
               "1st place - Texas'18 Hackathon",
@@ -473,9 +473,7 @@
           {
             title: 'Swimming',
             images: [
-              './Assets/Navbar/About/1.jpg',
-              './Assets/Navbar/About/2.jpg',
-              './Assets/Navbar/About/3.jpg',              
+              './Assets/Achievement/Swimming/1.jpg',             
             ],
             list: [
               "3rd place - Individual Medley Breaststroke",
@@ -486,9 +484,12 @@
           {
             title: 'Battle of Bands',
             images: [
-              './Assets/Navbar/About/1.jpg',
-              './Assets/Navbar/About/2.jpg',
-              './Assets/Navbar/About/3.jpg',              
+              './Assets/Achievement/Music/1.jpg',
+              './Assets/Achievement/Music/2.jpg',
+              './Assets/Achievement/Music/3.jpg',
+              './Assets/Achievement/Music/4.jpg',
+              './Assets/Achievement/Music/5.jpg',
+              './Assets/Achievement/Music/6.jpg',              
             ],
             list: [
               "1st place - WCC-Festeve (2019)",
