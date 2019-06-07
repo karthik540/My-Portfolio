@@ -298,18 +298,16 @@ a, a:hover, a:focus, a:active, a:link , a:visited{
 }
 
 /*      Projects Section Style      */
-.card{
-    max-width: 350px;
+.project-card{
+    max-width: 330px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .card img{
     display: block;
     width: auto;
     height: 180px;
-}
-.card{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /*@media only screen and (max-width: 1000px) {
