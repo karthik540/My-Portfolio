@@ -258,12 +258,22 @@
                 <span class="carousel-control-next-icon"></span>
               </a>
             </div>
-
-          <div class="row pt-5">
-            <ul class="achi-list">
-              <li v-for="item in ach.list" class="text-small">{{ item }}</li>
-            </ul>
+          <div class="row pt-3">
+            <!--      Copyright section     -->
+              <div class="col-12 pb-3 text-bold text-black text-small" v-bind:class="{'text-center col-12' : isResponsive}">
+                  {{ach.title}}
+              </div>
+              <div v-for="item in ach.list" class="col-12 text-black text-small" v-bind:class="{'text-center col-12' : isResponsive}">
+                  {{item}}
+              </div>              
           </div>
+          <!--<div class="row pt-5">
+            <div class="col-12 text-center">
+               <h3 class="row col-12 text-bold text-black text-small">{{ach.title}}</h3>
+                         
+              <h3 v-for="item in ach.list" class="row col-12 text-small">{{ item }}</h3>              
+            </div>        
+          </div>-->
         </div>
         </div>
       </div>
@@ -523,23 +533,25 @@
             images: [
               './Assets/Achievement/Competition/1.jpg',
               './Assets/Achievement/Competition/2.jpg',
-              './Assets/Achievement/Competition/3.jpg',         
+              './Assets/Achievement/Competition/3.jpg',
+              './Assets/Achievement/Competition/4.jpg',         
             ],
             list: [
-              "1st place - Texas'18 Hackathon",
-              "2nd place - Mozilla Hello Web Hackathon",
-              "2nd place - Game Jam Titans"
+              "1st place - Texas'18 Hackathon(2018)",
+              "2nd place - Mozilla Hello Web Hackathon(2017)",
+              "2nd place - Game Jam Titans(2015)"
             ]
           },
           {
             title: 'Swimming',
             images: [
-              './Assets/Achievement/Swimming/1.jpg',             
+              './Assets/Achievement/Swimming/1.jpg',
+              './Assets/Achievement/Swimming/2.jpg',              
             ],
             list: [
-              "3rd place - Individual Medley Breaststroke",
-              "3rd place - Relay",
-              "3rd place - Relay"
+              "3rd place - 25 mtrs Breaststroke(2013)",
+              "2nd place - 4x25 mtrs Medley Relay(2013)",
+              "3rd place - 4x25 mtrs Medley Relay(+3)(2013-2016)"
             ]
           },
           {
@@ -550,11 +562,15 @@
               './Assets/Achievement/Music/3.jpg',
               './Assets/Achievement/Music/4.jpg',
               './Assets/Achievement/Music/5.jpg',
-              './Assets/Achievement/Music/6.jpg',              
+              './Assets/Achievement/Music/6.jpg', 
+              './Assets/Achievement/Music/7.jpg', 
+              './Assets/Achievement/Music/8.jpg', 
+              './Assets/Achievement/Music/9.jpg',              
             ],
             list: [
               "1st place - WCC-Festeve (2019)",
-              "1st place - Vibrance (2019)"
+              "1st place - Vibrance (2019)",
+              "2nd place - Swirl (2015)"
             ]
           },
 

@@ -310,6 +310,12 @@ a, a:hover, a:focus, a:active, a:link , a:visited{
     height: 180px;
 }
 
+.custom-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*@media only screen and (max-width: 1000px) {
     .card{
         display: block;
