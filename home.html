@@ -78,7 +78,7 @@
                       </tr>
                       <tr>
                         <td class="dropdown-header">Age</td>
-                        <td>: 19</td>
+                        <td>: {{ age }}</td>
                       </tr>
                       <tr>
                         <td class="dropdown-header">Contact</td>
@@ -189,7 +189,7 @@
           <h1 class="text-blue text-large mb-3">A VITian</h1>
         </div>
         <div class="row pr-5">
-          <h1 class="text-medium">A 19 year old undergraduate, 3<sup>rd</sup> year VIT University Chennai.</h1>
+          <h1 class="text-medium">A {{ age }} year old graduate from VIT University Chennai.</h1>
         </div>
       </div>      
       <transition name = "fade-animate" tag="p">
@@ -309,23 +309,28 @@
       <a name="project-section"></a>
       <div class="container">
         <div class="row col-12 pt-5 pb-3">
-          <h1 class="text-light text-large">Projects / Work</h1>
+          <h1 class="text-light text-large">Projects</h1>
         </div>
         <div class="row col-12">   <!--  Replace this with typewriter component    -->
           <h1 class="text-light text-medium">Some of the projects and products that i've developed </h1>
         </div>
         <div class="row">
-          
           <div class="col-lg-4 col-12 px-3 py-5">
             <div class="card p-0 project-card">
-              <img class="card-img-top" src="./Assets/Projects/1.jpg" alt="Card image" style="width:100%">
+              <img class="card-img-top" src="./Assets/Projects/6.gif" alt="Card image" style="width:100%">
               <div class="card-body">
-                <h4 class="card-title text-small text-black text-bold">BeatSite</h4>
-                <p class="card-text text-vsmall">An AI powered(Bot DEKU) music listening website.Designed with CSS which is fully responsive and with Flask in the back.</p>
-                <a href="https://github.com/karthik540/BeatSite" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+                <h4 class="card-title text-small text-black text-bold">Police Surveillance Assistant</h4>
+                <p class="card-text text-vsmall"> A self-evolving AI which assists the 
+                  police in tracking COVID suspects, criminals, speeding vehicles, 
+                  containing public violence against health workers/cops and other 
+                  policing activities</p>                
               </div>
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/Police_Survillence_Assistant" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
             </div>
           </div>
+          
 
           <div class="col-lg-4 col-12 px-3 py-5">
             <div class="card p-0 project-card">
@@ -333,8 +338,57 @@
               <div class="card-body">
                 <h4 class="card-title text-small text-black text-bold">PAB-Vision</h4>
                 <p class="card-text text-vsmall">Personal Assistant for Blind (PAB) is an AI Chat Bot to provide a Real Time Solution for the Blind !</p>
-                <a href="https://github.com/karthik540/PAB_Vision" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+                
               </div>
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/PAB_Vision" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/7.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Developer Assistant</h4>
+                <p class="card-text text-vsmall">A developer assistant is a standalone software which assists with 
+                  error debugging, project creation and other problems faced by the 
+                  developers</p>
+                
+              </div>
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/Developers-Assistant" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/8.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Apocalyptic ZERO</h4>
+                <p class="card-text text-vsmall">A post apocalypse themed zombie shooter made with Unreal Engine 4. This showacase my expertise in Game Development and my level design capabilities.</p>
+                
+              </div>
+              
+              <div class="card-footer bg-white">
+                <a href="https://www.youtube.com/watch?v=eJjikAQN8Ns&ab_channel=KarthikR" target="_blank" class="btn btn-primary float-right"><i class="fa fa-youtube-play" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/1.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">BeatSite</h4>
+                <p class="card-text text-vsmall">An AI powered(Bot DEKU) music listening website.Designed with CSS which is fully responsive and with Flask in the back.</p>
+                
+              </div>
+              
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/BeatSite" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
             </div>
           </div>
 
@@ -344,8 +398,12 @@
               <div class="card-body">
                 <h4 class="card-title text-small text-black text-bold">My-Porfolio</h4>
                 <p class="card-text text-vsmall">Wanna know how i made this website ? How everything render in a single file ? Click the below link to find out.</p>
-                <a href="https://github.com/karthik540/My-Portfolio" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+                
               </div>
+              
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/My-Portfolio" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
             </div>
           </div>
 
@@ -355,9 +413,12 @@
               <div class="card-body">
                 <h4 class="card-title text-small text-black text-bold">Pictionary</h4>
                 <p class="card-text text-vsmall">It is a Desktop Application created using C# and .NET. This application helps the user to personalize and maintain his/her's dictionary in there way, with the support of a unique account provided for each user.</p>
+                
+              </div>              
+              <div class="card-footer bg-white">
                 <a href="https://github.com/karthik540/Pictionary" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
               </div>
-            </div>
+            </div> 
           </div>
 
           <div class="col-lg-6 col-12 px-3 py-5">
@@ -366,8 +427,11 @@
               <div class="card-body">
                 <h4 class="card-title text-small text-black text-bold">Level Design</h4>
                 <p class="card-text text-vsmall">Check out this awesome sunset themed level design, click the visit button below.</p>
-                <a href="https://www.youtube.com/watch?v=mNg30oVEHUU" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+                
               </div>
+              <div class="card-footer bg-white">
+                <a href="https://www.youtube.com/watch?v=mNg30oVEHUU" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
             </div>
           </div>
         </div>
@@ -502,6 +566,7 @@
         },
         appearValue: 200,
         locArray: [],
+        age: 22,
         firstLocationTop: null,
         firstLocationBot:null,
         secondLocationTop:null,
@@ -533,7 +598,7 @@
         ],
         gamesData:[
           {id: 1 , title:'Dark Souls III'},
-          {id: 2 , title:'Apex Legends'},
+          {id: 2 , title:'Valorant'},
           {id: 3 , title:'PUBG'},
           {id: 4 , title:'Rainbow Six Siege'},
           {id: 5 , title:'Fortnite'},
@@ -556,11 +621,15 @@
               './Assets/Achievement/Competition/4.jpg',         
             ],
             list: [
+              "1st Place - iNeuron Hackathon (2022)",
+              "1st Place – Smart India Hackathon (2020) (National)",
+              "Top 16 - IBM Crack the covid crisis (2020) (National)",
+              "1st Place - Parallax Hackathon (2020)",
               "1st place - JU Hackathon (2019) (National)",
               "1st Place – SRM Hack Summit (2019)",
-              "1st place - Texas'18 Hackathon(2018)",
-              "2nd place - Mozilla Hello Web Hackathon(2017)",
-              "2nd place - Game Jam Titans(2015)"
+              "1st place - Texas'18 Hackathon (2018)",
+              "2nd place - Mozilla Hello Web Hackathon (2017)",
+              "2nd place - Game Jam Titans (2015)"
             ]
           },
           {
@@ -570,9 +639,9 @@
               './Assets/Achievement/Swimming/2.jpg',              
             ],
             list: [
-              "3rd place - 25 mtrs Breaststroke(2013)",
-              "2nd place - 4x25 mtrs Medley Relay(2013)",
-              "3rd place - 4x25 mtrs Medley Relay(+3)(2013-2016)"
+              "3rd place - 25 mtrs Breaststroke (2013)",
+              "2nd place - 4x25 mtrs Medley Relay (2013)",
+              "3rd place - 4x25 mtrs Medley Relay (+3) (2013-2016)"
             ]
           },
           {
