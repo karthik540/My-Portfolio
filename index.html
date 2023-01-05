@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="app">
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12 first-section">
+        <div class="container">
+
+          <nav class="row pt-5">
+            <div class="col-xl-10 col-10 pl-0">
+              <div class="row">
+                <!--    Website Title   -->
+                <div class="col-xl-2 text-light text-medium text-bold">
+                  Portfolio
+                </div>
+                
+                <!--    First set of nav links    -->
+                <div class="col-xl-10">
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link pl-0 text-light text-vsmall" v-bind:class="{'pr-2 py-2 text-vvsmall' : isResponsive}" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light text-vsmall" v-on:click="navbarHandler(1)" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">Honors</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light text-vsmall" v-on:click="navbarHandler(2)" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#">About me</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light text-vsmall" v-bind:class="{'p-2 text-vvsmall' : isResponsive}" href="#fsection">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--    Profile set of nav links    -->
+            <div class="col-xl-2 col-2">
+              <ul class="nav justify-content-end dropdown">
+                <!--<li class="nav-item">
+                  <a class="nav-link text-light dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i></a>                        
+                </li>-->
+                <button type="button" class="btn" @click="navbarHandler(3)">
+                  <i class="fa fa-id-card-o" style="font-size:24px;color:#FFFFFF;"></i>
+                </button>
+              </ul>
+            </div>
+          </nav>
+          <div class="row">
+          <div class="dropdown col-12">
+            <transition name="slide-animate-short" tag="p">
+              <div v-if= "profileDropdown" class="dropdown-menu dropdown-menu-right animated-card-short show">
+                  <div class="dropdown-header text-center">Profile</div>
+                  <div class="dropdown-divider"></div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="dropdown-header">Name</td>
+                        <td>: Karthik</td>
+                      </tr>
+                      <tr>
+                        <td class="dropdown-header">Age</td>
+                        <td>: {{ age }}</td>
+                      </tr>
+                      <tr>
+                        <td class="dropdown-header">Contact</td>
+                        <td>: rajkarthik96@gmail.com</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </transition>
+            <transition name="slide-animate-short" tag="p">
+            <div v-if="aboutDropdown" class="nav-bar-dropdown animated-card-short dropdown-menu show">
+              <div class="row">
+              <a href="#skill-section" class="col-md mx-3 my-2" style="text-decoration: none;">
+              <div class="card  dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/About/1.jpg')">
+                <div class="card-body">
+                  <h4 class="text-medium" v-bind:class="{'text-center' : !isResponsive}">Skills</h4>                  
+                </div>                
+              </div>
+              </a>
+              <a href="#games-section" class="col-md mx-3 my-2" style="text-decoration: none;">
+              <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/About/2.jpg')">
+                <div class="card-body" >
+                  <h4 class="text-medium" v-bind:class="{'text-center' : !isResponsive}">Games</h4>
+                </div>                
+              </div>
+              </a>
+              <a href="#music-section" class="col-md mx-3 my-2" style="text-decoration: none;">
+              <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/About/3.jpg')" >
+                <div class="card-body image-wrap-small">
+                  <h4 class="text-medium" v-bind:class="{'text-center' : !isResponsive}">Music</h4>
+                </div>                
+              </div>
+              </a>
+              </div>
+            </div>
+            </transition>
+            <transition name="slide-animate-short" tag="p">
+            <div v-if="honorDropdown" class="nav-bar-dropdown animated-card-short dropdown-menu show">
+              <div class="row">
+              <a href="#achievement-section" class="col-md mx-3 my-2" style="text-decoration: none;">
+              <div class="card  dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/Achievement/1.jpg')">
+                <div class="card-body">
+                  <h4 class="text-medium text-glowWhite" >Achievements</h4>                  
+                </div>                
+              </div>
+              </a>
+              <a href="#project-section" class="col-md mx-3 my-2" style="text-decoration: none;">
+              <div class="card dropdown-card animated-card-short image-wrap-small" style="background-image:url('./Assets/Navbar/Achievement/2.jpg')" >
+                <div class="card-body image-wrap-small">
+                  <h4 class="text-medium text-glowOrange"  >Projects</h4>
+                </div>                
+              </div>
+              </a>
+              </div>
+            </div>
+            </transition>
+
+          </div>
+          </div>
+          
+          <!--    Top content text    -->
+          <div class="row">
+            <div class="top-content-text col-xl-10 col-lg-10">
+              <div class="row">
+                <h1 class="text-light text-large">Welcome to my Portfolio</h1>
+              </div>
+              <div class="row">
+                <h1 class="text-light text-large mb-4">Have a Blast :D</h1>
+              </div>
+              <div class="row">   <!--  Replace this with typewriter component    -->
+                <h1 id="typewriter-content" class="text-light text-medium"></h1>
+              </div>
+
+              <div class="row mt-4">
+                <button type="button" class="btn btn-primary" v-bind:class="{'px-4 py-2' : isResponsive , 'px-5 py-3' : !isResponsive}">Explore</button>
+              </div>
+            </div>
+
+            <div class="col-xl-2 col-2 pt-5">
+                <img src="./Assets/img5.jpg" class="rounded-circle" alt="Cinque Terre" style="height: 200px;" title="P.C: Ankit Kumar Nath">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row second-section pb-0" id="1">      
+      <transition name="slide-animate" tag="p">
+      <div class="col-sm-5 mr-5 animated-card image-wrap" v-if="firstSection" style="background-image: url('./Assets/img1.jpg')"></div>
+      </transition>
+      
+      <div class="col-sm-6 vert-align image-content-right">
+        <div class="row">
+          <h1 class="text-blue text-large mb-3">A Musician</h1>
+        </div>
+        <div class="row">
+          <h1 class="text-medium">Guitarist, keyboardist and some drums maybe !</h1>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="2">
+    <span class="row second-section" v-if="!isResponsive">
+      <div class="col-sm-6 vert-align image-content-left p-5">
+        <div class="row">
+          <h1 class="text-blue text-large mb-3">A VITian</h1>
+        </div>
+        <div class="row pr-5">
+          <h1 class="text-medium">A {{ age }} year old graduate from VIT University Chennai.</h1>
+        </div>
+      </div>      
+      <transition name = "fade-animate" tag="p">
+        <div class="col-sm-6 image-wrap animated-card" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
+      </transition>
+    </span>
+      
+
+      <span class="row second-section" v-if="isResponsive">
+        <transition name="slide-animate" tag="p">
+        <div class="col-sm-5 mr-5 animated-card image-wrap" v-if="secondSection" style="background-image: url('./Assets/img4.jpg')"></div>
+        </transition>
+        
+        <div class="col-sm-6 vert-align image-content-right">
+          <div class="row">
+            <h1 class="text-blue text-large mb-3">A VITian</h1>
+          </div>
+          <div class="row">
+            <h1 class="text-medium">A 19 year old undergraduate, 3<sup>rd</sup> year VIT University Chennai.</h1>
+          </div>
+        </div>
+      </span>
+    </div>
+
+    <div class="row second-section pb-0" id="3">      
+      <transition name = "slide-animate">
+      <div class="col-sm-5 mr-5 image-wrap animated-card" v-if="thirdSection" style="background-image: url('./Assets/img6.jpg')" title="P.C: Siddarth Ramaswamy"></div>
+      </transition>
+      
+      <div class="col-sm-6 vert-align image-content-right">
+        <div class="row">
+          <h1 class="text-blue text-large mb-3">A Computer Enthusiast</h1>
+        </div>
+        <div class="row">
+          <h1 class="text-medium">Web developer,designer and lot more skills.</h1>
+        </div>
+      </div>
+    </div>
+
+    <!--    Achievements    -->
+
+    <div class="row section-blue">
+      <a name="achievement-section"></a>
+      <div class="container">
+        <div class="row col-12 pt-5 pb-3">
+          <h1 class="text-light text-large">Achievements</h1>
+        </div>
+        <div class="row col-12">   <!--  Replace this with typewriter component    -->
+          <h1 class="text-light text-medium">Prizes and Honors recieved in <br v-if="isResponsive"> <span id="achive" class="text-medium"></span></h1>
+        </div>
+        <div class="row">
+        <div class="col-lg-4 col-12 pt-5" v-for="(ach,index) in acheivementData">
+            <div :id='"myCarousel"+index' class="carousel slide" data-ride="carousel">
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item" v-for="(imag,index) in ach.images" :class="{'active' : index === 0}">
+                  <img :src="imag" alt="Los Angeles">
+                </div>
+              </div>
+              
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" :href='"#myCarousel"+index' data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" :href='"#myCarousel"+index' data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          <div class="row pt-3">
+            <!--      Copyright section     -->
+              <div class="col-12 pb-3 text-bold text-black text-small" v-bind:class="{'text-center col-12' : isResponsive}">
+                  {{ach.title}}
+              </div>
+              <div v-for="item in ach.list" class="col-12 text-black text-small" v-bind:class="{'text-center col-12' : isResponsive}">
+                  {{item}}
+              </div>              
+          </div>
+          <!--<div class="row pt-5">
+            <div class="col-12 text-center">
+               <h3 class="row col-12 text-bold text-black text-small">{{ach.title}}</h3>
+                         
+              <h3 v-for="item in ach.list" class="row col-12 text-small">{{ item }}</h3>              
+            </div>        
+          </div>-->
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!--    About me      -->
+
+    <div class="row section-light">
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="skill-section"></a>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Top Skills<i class="fa fa-code ml-2 text-grey" style="font-size:30px"></i></div>
+        <img v-for="x in skillsData" :src="'Assets/Skills/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-1 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+      </div>
+
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="games-section"></a>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Games<i class="fa fa-gamepad ml-2 text-grey" style="font-size:30px"></i></div>
+        <img v-for="x in gamesData" :src="'Assets/Games/'+ x.id +'.jpg'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'right-left' : !isResponsive}">
+      </div>
+
+      <div class="skill-parent" v-bind:class="{'text-center col-12' : isResponsive}">
+        <a name="music-section"></a>
+        <div class="text-center col-12 text-black text-medium text-bold my-5">Music / Bands  </div>
+        <img v-for="x in musicData" :src="'Assets/Music/'+ x.id +'.png'" :title="x.title" class="skill-child p-3 col-xl-2 col-md-2 col-3" v-bind:class="{'left-right' : !isResponsive}">
+      </div>
+    </div>
+    <!--    About me ends   -->
+
+
+    <!--    Project / Work Section    -->
+
+    <div class="row section-blue">
+      <a name="project-section"></a>
+      <div class="container">
+        <div class="row col-12 pt-5 pb-3">
+          <h1 class="text-light text-large">Projects</h1>
+        </div>
+        <div class="row col-12">   <!--  Replace this with typewriter component    -->
+          <h1 class="text-light text-medium">Some of the projects and products that i've developed </h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/6.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Police Surveillance Assistant</h4>
+                <p class="card-text text-vsmall"> A self-evolving AI which assists the 
+                  police in tracking COVID suspects, criminals, speeding vehicles, 
+                  containing public violence against health workers/cops and other 
+                  policing activities</p>                
+              </div>
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/Police_Survillence_Assistant" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+          
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/2.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">PAB-Vision</h4>
+                <p class="card-text text-vsmall">Personal Assistant for Blind (PAB) is an AI Chat Bot to provide a Real Time Solution for the Blind !</p>
+                
+              </div>
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/PAB_Vision" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/7.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Developer Assistant</h4>
+                <p class="card-text text-vsmall">A developer assistant is a standalone software which assists with 
+                  error debugging, project creation and other problems faced by the 
+                  developers</p>
+                
+              </div>
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/Developers-Assistant" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/8.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Apocalyptic ZERO</h4>
+                <p class="card-text text-vsmall">A post apocalypse themed zombie shooter made with Unreal Engine 4. This showacase my expertise in Game Development and my level design capabilities.</p>
+                
+              </div>
+              
+              <div class="card-footer bg-white">
+                <a href="https://www.youtube.com/watch?v=eJjikAQN8Ns&ab_channel=KarthikR" target="_blank" class="btn btn-primary float-right"><i class="fa fa-youtube-play" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/1.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">BeatSite</h4>
+                <p class="card-text text-vsmall">An AI powered(Bot DEKU) music listening website.Designed with CSS which is fully responsive and with Flask in the back.</p>
+                
+              </div>
+              
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/BeatSite" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/3.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">My-Porfolio</h4>
+                <p class="card-text text-vsmall">Wanna know how i made this website ? How everything render in a single file ? Click the below link to find out.</p>
+                
+              </div>
+              
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/My-Portfolio" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/4.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Pictionary</h4>
+                <p class="card-text text-vsmall">It is a Desktop Application created using C# and .NET. This application helps the user to personalize and maintain his/her's dictionary in there way, with the support of a unique account provided for each user.</p>
+                
+              </div>              
+              <div class="card-footer bg-white">
+                <a href="https://github.com/karthik540/Pictionary" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div>
+            </div> 
+          </div>
+
+          <div class="col-lg-6 col-12 px-3 py-5">
+            <div class="card p-0 project-card">
+              <img class="card-img-top" src="./Assets/Projects/5.gif" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title text-small text-black text-bold">Level Design</h4>
+                <p class="card-text text-vsmall">Check out this awesome sunset themed level design, click the visit button below.</p>
+                
+              </div>
+              <div class="card-footer bg-white">
+                <a href="https://www.youtube.com/watch?v=mNg30oVEHUU" target="_blank" class="btn btn-primary float-right"><i class="fa fa-github" aria-hidden="true"></i> Visit</a>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+    
+
+    <!--        Footer Starts       -->
+    <a name="fsection"></a>
+    <footer class="row">
+      <div class="container">
+        <div class="row center">
+          <!--      Section 1     -->
+          <div class="col-xl-3 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
+            <div class="row text-small text-white text-bold">
+              My Motto
+            </div>
+            <div class="row text-vvsmall text-grey mt-3 pr-5">
+              I would always explore and look for ideas and innovation in the field, thereby looking for the optimal solution to all problems.
+            </div>
+          </div>
+
+          <!--      Section 2     -->
+          <div class="col-xl-2 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
+            <div class="row text-vsmall text-white text-bold">
+              Explore
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="#" @click="topClick" class="text-grey">Home</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="#" @click="topClick" class="text-grey">Honor</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="#" @click="topClick" class="text-grey">About me</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="#" class="text-grey">Contact</a>
+            </div>
+          </div>
+
+          <!--    Section 3     -->
+          <div class="col-xl-3 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
+            <!--    Sub-Section 1    -->
+            <div class="row text-vsmall text-white text-bold">
+              Visit
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <span class="text-grey">Currently in Royapettah,</span>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <span class="text-grey">Chennai-600014.</span>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <span class="text-grey">Tamil Nadu, India.</span>
+            </div>
+            <!--    Sub-Section 2    -->
+            <div class="row text-vsmall text-white text-bold mt-4">
+              Contact Info
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="#" class="text-grey">rajkarthik967@gmail.com</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="#" class="text-grey">(or)</a>
+            </div>            
+            <div class="row text-vvsmall mt-2">
+              <a href="#" class="text-grey">rajkarthik96@gmail.com</a>
+            </div>
+          </div>
+
+          <!--    Section 4     -->
+          <div class="col-xl-2 col-6 p-3 my-4" v-bind:class="{'pl-5' : isResponsive}">
+            <div class="row text-vsmall text-white text-bold">
+              Follow
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="https://www.instagram.com/karthikraj540/" target="_blank" class="text-grey"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="https://github.com/karthik540" target="_blank" class="text-grey"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="https://www.youtube.com/channel/UCvUdwygMCOicBoBgze-nbAA?view_as=subscriber" target="_blank" class="text-grey"><i class="fa fa-youtube-play" aria-hidden="true"></i> Youtube</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="https://www.linkedin.com/in/karthik-r-92626817b/" target="_blank" class="text-grey"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            </div>
+            <div class="row text-vvsmall mt-2">
+              <a href="https://www.facebook.com/profile.php?id=100006697306275&ref=bookmarks" target="_blank" class="text-grey"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+            </div>
+          </div>
+
+          <!--    Section 5     -->
+          <div class="col-xl-2 col-12 p-3 my-4 text-center">
+            <button class="btn btn-outline-primary" @click="topClick" style="background-color: #022144;">Back to top</button>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <!--      Copyright section     -->
+            <div class="text-vvsmall text-grey my-4" v-bind:class="{'text-center col-12' : isResponsive}">
+                &copy; Karthik, All Rights Reserved.
+            </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--      Footer Ends       -->
+
+  </div>
+
+
+
+
+  
+  <!--       Scripting Starts         -->
+
+  <script>
+    var vueObj = new Vue({
+      el: '#app',
+      data: {
+        window: {
+          width: 0,
+          height: 0
+        },
+        appearValue: 200,
+        locArray: [],
+        age: 23,
+        firstLocationTop: null,
+        firstLocationBot:null,
+        secondLocationTop:null,
+        secondLocationBot:null,
+        thirdLocationTop:null,
+        thirdLocationBot:null,
+        aboutDropdown: false,
+        honorDropdown: false,
+        profileDropdown: false,
+        skillsData:[
+          {id: 1 , title:'Unreal Engine'},
+          {id: 2 , title:'HTML5 CSS3 JS'},
+          {id: 3 , title:'Unity'},
+          {id: 4 , title:'Ajax'},
+          {id: 5 , title:'JQuery'},
+          {id: 6 , title:'Flask'},
+          {id: 7 , title:'Django'},
+          {id: 8 , title:'Php'},
+          {id: 9 , title:'Node JS'},
+          {id: 10 , title:'React Native'}, 
+        ],
+        musicData:[
+          {id: 1 , title:'AC/DC'},
+          {id: 2 , title:'Taylor Swift'},
+          {id: 3 , title:'Hiphop Tamizhan'},
+          {id: 4 , title:'Mettalica'},
+          {id: 5 , title:'Slash'},
+          {id: 6 , title:'Avenged Sevenfold'},
+        ],
+        gamesData:[
+          {id: 1 , title:'Dark Souls III'},
+          {id: 2 , title:'Valorant'},
+          {id: 3 , title:'PUBG'},
+          {id: 4 , title:'Rainbow Six Siege'},
+          {id: 5 , title:'Fortnite'},
+          {id: 6 , title:'League of Legends'},
+        ],
+        aboutMe:[
+          {id: 1 , title:'Skills'},
+          {id: 2 , title:'Games'},
+          {id: 3 , title:'Music'},
+        ],
+        acheivementData:[
+          {
+            title: 'Programming and Hackathon',
+            images: [
+              './Assets/Achievement/Competition/5.jpg',
+              './Assets/Achievement/Competition/6.jpg',
+              './Assets/Achievement/Competition/1.jpg',
+              './Assets/Achievement/Competition/2.jpg',
+              './Assets/Achievement/Competition/3.jpg',
+              './Assets/Achievement/Competition/4.jpg',         
+            ],
+            list: [
+              "1st Place - iNeuron Hackathon (2022)",
+              "1st Place – Smart India Hackathon (2020) (National)",
+              "Top 16 - IBM Crack the covid crisis (2020) (National)",
+              "1st Place - Parallax Hackathon (2020)",
+              "1st place - JU Hackathon (2019) (National)",
+              "1st Place – SRM Hack Summit (2019)",
+              "1st place - Texas'18 Hackathon (2018)",
+              "2nd place - Mozilla Hello Web Hackathon (2017)",
+              "2nd place - Game Jam Titans (2015)"
+            ]
+          },
+          {
+            title: 'Swimming',
+            images: [
+              './Assets/Achievement/Swimming/1.jpg',
+              './Assets/Achievement/Swimming/2.jpg',              
+            ],
+            list: [
+              "3rd place - 25 mtrs Breaststroke (2013)",
+              "2nd place - 4x25 mtrs Medley Relay (2013)",
+              "3rd place - 4x25 mtrs Medley Relay (+3) (2013-2016)"
+            ]
+          },
+          {
+            title: 'Battle of Bands',
+            images: [
+              './Assets/Achievement/Music/1.jpg',
+              './Assets/Achievement/Music/2.jpg',
+              './Assets/Achievement/Music/3.jpg',
+              './Assets/Achievement/Music/4.jpg',
+              './Assets/Achievement/Music/6.jpg', 
+              './Assets/Achievement/Music/7.jpg', 
+              './Assets/Achievement/Music/8.jpg', 
+              './Assets/Achievement/Music/9.jpg',
+              './Assets/Achievement/Music/10.jpg',           
+            ],
+            list: [
+              "1st place - WCC-Festeve (2019)",
+              "1st place - Vibrance (2019)",
+              "2nd place - Swirl (2015)"
+            ]
+          },
+
+        ]
+      },
+      mounted() {
+        window.addEventListener('resize', this.handleResize)
+        window.addEventListener('scroll', this.handleResize)
+        this.handleResize();
+        
+        var cardObj = document.getElementById("1")
+        var loc = cardObj.getBoundingClientRect()
+        this.firstLocationTop = loc.top
+        this.firstLocationBot = loc.bottom
+        
+        var cardObj = document.getElementById("2")
+        var loc = cardObj.getBoundingClientRect()
+        this.secondLocationTop = loc.top
+        this.secondLocationBot = loc.bottom
+
+        var cardObj = document.getElementById("3")
+        var loc = cardObj.getBoundingClientRect()
+        this.thirdLocationTop = loc.top
+        this.thirdLocationBot = loc.bottom
+        /*
+        for(var i=0;i<3;i++){
+          var cardObj = document.getElementById(i.toString())
+          var loc = cardObj.getBoundingClientRect()
+          var locJson = {
+            top: loc.top,
+            bottom: loc.top
+          }
+          this.locArray.push(locJson)
+        }
+        */
+      },
+      destroyed() {
+        window.removeEventListener('resize', this.handleResize)
+        window.removeEventListener('scroll', this.handleResize)
+      },
+      computed: {
+        isResponsive: function() {
+          if(this.window.width < 767)
+            return true
+          else
+            return false
+        },
+        firstSection: function() {
+          if(this.window.height > (this.firstLocationTop - this.appearValue) && this.window.height < (this.firstLocationBot + this.appearValue))
+            return true
+          else if(this.window.height <= (this.firstLocationTop - this.appearValue) || this.window.height >= (this.firstLocationBot + this.appearValue))            
+            return false
+        },
+        secondSection: function() {
+          if(this.window.height > (this.secondLocationTop - this.appearValue) && this.window.height < (this.secondLocationBot +  this.appearValue))
+            return true 
+          else if(this.window.height <= (this.secondLocationTop - this.appearValue) || this.window.height >= (this.secondLocationBot +  this.appearValue))           
+            return false
+        },
+        thirdSection: function() {
+          if(this.window.height > (this.thirdLocationTop - this.appearValue) && this.window.height < (this.thirdLocationBot + this.appearValue))
+            return true            
+          else if(this.window.height <= (this.thirdLocationTop - this.appearValue) || this.window.height >= (this.thirdLocationBot + this.appearValue))
+            return false
+        }
+      },      
+      watch: {
+        firstSection: function(val) {
+          console.log(val);
+        },
+        secondSection: function(val) {
+          console.log(val);
+        },
+        thirdSection: function(val) {
+          console.log(val);
+        },
+      },
+      methods: {
+        handleResize() {
+          this.window.width = window.innerWidth;
+          this.window.height = $(window).scrollTop()
+        },
+        navbarHandler(no) {
+          if(no == 1){
+            this.aboutDropdown = false
+            this.profileDropdown = false
+            this.honorDropdown = !this.honorDropdown
+          }else if(no == 2) {
+            this.honorDropdown = false
+            this.profileDropdown = false
+            this.aboutDropdown = !this.aboutDropdown
+          }else if(no == 3) {
+            this.honorDropdown = false
+            this.aboutDropdown = false
+            this.profileDropdown = !this.profileDropdown
+          }
+        },
+        topClick: function() {
+          $("html, body").animate({scrollTop: 0}, 1000);
+        }
+      },
+    })
+
+    /*      typewriter instance      */
+    var options = {
+      strings: ["Fully designed, developed and maintained by myself", "I love doing these kinda stuff !"],
+      typeSpeed: 50,
+      backDelay: 3000,
+      loop: true
+    }
+    var options_achive = {
+      strings: ["Schools." , "Colleges." , "Outer-Competitions."],
+      typeSpeed: 50,
+      backDelay: 3000,
+      loop: true
+    }
+    
+    var typewriterObj = new Typed("#typewriter-content", options);
+    var typewriterObjAchieve = new Typed("#achive", options_achive);
+     
+  </script>
+
+
+
+
+  <!--      StyleSheet Starts       -->
+  <style>
+    
+  </style>
+</div>  
+</body>
+</html>
